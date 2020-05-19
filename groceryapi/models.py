@@ -3,14 +3,14 @@ from django.db import models
 class User(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)
-    street_address = models.CharField(max_length=50)
-    zip_code = models.IntegerField()
-    phone = models.IntegerField()
+    street_address = models.CharField(max_length=250)
+    zip_code = models.CharField(max_length=250)
+    phone = models.CharField(max_length=250)
     customer_id = models.IntegerField()
 
 
 class TransactionStory(models.Model):
-    customer_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    customer_id = models.IntegerField()
     basket = models.CharField(max_length=250)
     purchase_count = models.IntegerField()
 

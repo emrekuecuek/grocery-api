@@ -5,7 +5,7 @@ from .models import User, TransactionStory, Product
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = {'name', 'email', 'street_address', 'zip_code', 'phone', 'customer_id', 'transactionstory_set'}
+        fields = ['name', 'email', 'street_address', 'zip_code', 'phone', 'customer_id']
 
 class TransactionStorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
